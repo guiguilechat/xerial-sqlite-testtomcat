@@ -1,0 +1,11 @@
+#!/bin/bash
+
+docker stop tomcatxerial
+
+mvn package
+
+docker run -d --rm --name tomcatxerial tomcat:10.1.40
+
+docker cp target/TestXerialSqliteTomcat.war tomcatxerial:/usr/local/tomcat/webapps/
+
+docker logs -f tomcatxerial
