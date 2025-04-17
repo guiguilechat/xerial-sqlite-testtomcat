@@ -4,7 +4,8 @@ docker stop tomcatxerial
 
 mvn clean package || exit 1
 
-docker run -d --rm --name tomcatxerial tomcat:10.1.40
+# other images https://hub.docker.com/_/tomcat
+docker run -d --rm --name tomcatxerial tomcat:11.0.6
 
 docker cp target/TestXerialSqliteTomcat.war tomcatxerial:/usr/local/tomcat/webapps/
 
