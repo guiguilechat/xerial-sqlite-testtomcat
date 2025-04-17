@@ -2,7 +2,7 @@
 
 docker stop tomcatxerial
 
-mvn package
+mvn clean package || exit 1
 
 docker run -d --rm --name tomcatxerial tomcat:10.1.40
 
